@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>投稿一覧</title>
+</head>
+<body>
+<h1>投稿された記事一覧</h1>
+<ul>
+  <li th:each="post : ${posts}">
+    <h2 th:text="${post.title}"></h2>
+    <p th:text="${post.content}"></p>
+    <small th:text="${post.createdAt}"></small>
+  </li>
+</ul>
+<a href="/post/form">新規投稿</a>
+</body>
+</html>
