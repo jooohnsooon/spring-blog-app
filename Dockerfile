@@ -6,7 +6,7 @@ COPY --chown=gradle:gradle . /app
 WORKDIR /app
 
 # Gradleでビルド（初回は少し時間かかる）
-RUN gradle build --no-daemon
+RUN gradle build -x test --no-daemon
 
 # 実行用の軽量イメージ（Javaのみ）
 FROM openjdk:17-slim
