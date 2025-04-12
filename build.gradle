@@ -26,6 +26,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
+	// 開発支援
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 	// 🔐 セキュリティ
 //	implementation 'org.springframework.boot:spring-boot-starter-security'
 
