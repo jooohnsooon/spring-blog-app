@@ -22,6 +22,17 @@ public class PostController {
         return "post/list"; // templates/posts.html を返す
     }
 
+    // 投稿詳細ページ
+    @GetMapping("/post/detail/{id}")
+    public String postShow(@PathVariable Integer id,Model model) {
+        Post post = postRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("投稿が見つかりません"));
+        model.addAttribute("post", post);
+        return "post/detail";
+    }
+
+
+
     // 投稿フォームページ
     @GetMapping("/post/form")
     public String formPage() {

@@ -8,7 +8,7 @@
 <h1>投稿された記事一覧</h1>
 <ul>
   <li th:each="post : ${posts}">
-    <h2 th:text="${post.title}"></h2>
+    <h2><a th:href="@{'/post/detail/' + ${post.id}}" th:text="${post.title}"></a></h2>
     <p th:text="${post.content}"></p>
     <small th:text="${post.createdAt}"></small>
   </li>
